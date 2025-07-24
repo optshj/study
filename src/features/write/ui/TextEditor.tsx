@@ -1,22 +1,40 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { useCreateBlockNote } from '@blocknote/react'
 import { BlockNoteView } from '@blocknote/mantine'
 import '@blocknote/mantine/style.css'
 import '@blocknote/core/fonts/inter.css'
+import { Block } from '@blocknote/core'
 
-export function TextEditor() {
-    const editor = useCreateBlockNote()
-    const referenceBlock = editor.document[0]
-    editor.insertBlocks(
-        [
-            { type: 'heading', content: 'My Heading' },
-            { type: 'paragraph', content: 'Some content' },
-            { type: 'bulletListItem', content: 'List item 1' },
-            { type: 'bulletListItem', content: 'List item 2' }
-        ],
-        referenceBlock
+export default function TextEditor() {
+    const [blocks, setBlocks] = useState<Block[]>([])
+    const editor = useCreateBlockNote({
+        initialContent: [
+            {
+                type: 'paragraph',
+                content: 'Welcome to this demo!'
+            },
+            {
+                type: 'heading',
+                content: 'This is a heading block'
+            },
+            {
+                type: 'paragraph',
+                content: 'This is a paragraph block'
+            },
+            {
+                type: 'paragraph'
+            }
+        ]
+    })
+
+    return (
+        <BlockNoteView
+            editor={editor}
+            onChange={() => {
+                setBlocks(editor.document)
+            }}
+            theme={'light'}
+        />
     )
-
-    return <BlockNoteView editor={editor} theme={'light'} />
 }
