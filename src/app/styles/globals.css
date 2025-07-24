@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nobile:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --color-emphasis: #2383e2;
+    --color-text-secondary: #6b6b6b;
+    --color-text-primary: #4a4a4a;
+    --color-bg-primary: #f8f9fa;
+    --color-border-gray: #e5e5e5;
+    --color-level1: #0455bf;
+    --color-level2: #1e69cb;
+    --color-level3: #438ef2;
+    --color-level4: #74b0ff;
+    --font-inter: 'inter', sans-serif;
+}
+
+@layer base {
+    :root {
+        --color-emphasis: #2383e2;
+        --color-text-secondary: #6b6b6b;
+        --color-text-primary: #4a4a4a;
+        --color-bg-primary: #f8f9fa;
+        --color-border-gray: #e5e5e5;
+        --color-level1: #0455bf;
+        --color-level2: #1e69cb;
+        --color-level3: #438ef2;
+        --color-level4: #74b0ff;
+    }
+
+    html.dark {
+    }
+}
+@layer utilities {
+    .bg-primary {
+        background-color: var(--color-bg-primary);
+    }
+    .text-primary {
+        color: var(--color-text-primary);
+    }
+    .text-secondary {
+        color: var(--color-text-secondary);
+    }
+    .emphasis {
+        color: var(--color-emphasis);
+    }
+    .border-gray {
+        border-color: var(--color-border-gray);
+    }
+    .level-1 {
+        background-color: var(--color-level1);
+    }
+    .level-2 {
+        background-color: var(--color-level2);
+    }
+    .level-3 {
+        background-color: var(--color-level3);
+    }
+    .level-4 {
+        background-color: var(--color-level4);
+    }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
