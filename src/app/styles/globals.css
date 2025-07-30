@@ -3,10 +3,11 @@
 
 @theme {
     --color-emphasis: #2383e2;
+    --color-bg-secondary: #f1f3f5;
     --color-text-secondary: #6b6b6b;
     --color-text-primary: #4a4a4a;
     --color-bg-primary: #f8f9fa;
-    --color-border-gray: #e5e5e5;
+    --color-border-primary: #e5e5e5;
     --color-level1: #0455bf;
     --color-level2: #1e69cb;
     --color-level3: #438ef2;
@@ -16,11 +17,13 @@
 
 @layer base {
     :root {
+        --color-bg-background: #ffffff;
+        --color-bg-primary: #f8f9fa;
+        --color-bg-secondary: #f1f3f5;
         --color-emphasis: #2383e2;
         --color-text-secondary: #6b6b6b;
         --color-text-primary: #4a4a4a;
-        --color-bg-primary: #f8f9fa;
-        --color-border-gray: #e5e5e5;
+        --color-border-primary: #e5e5e5;
         --color-level1: #0455bf;
         --color-level2: #1e69cb;
         --color-level3: #438ef2;
@@ -28,11 +31,23 @@
     }
 
     html.dark {
+        --color-bg-background: #1f1f1f;
+        --color-bg-primary: #363636;
+        --color-bg-secondary: #2c2c2c;
+        --color-text-primary: #e0e0e0;
+        --color-text-secondary: #cfcfcf;
+        --color-border-primary: #4f4f4f;
     }
 }
 @layer utilities {
+    .bg-background {
+        background-color: var(--color-bg-background);
+    }
     .bg-primary {
         background-color: var(--color-bg-primary);
+    }
+    .bg-secondary {
+        background-color: var(--color-bg-secondary);
     }
     .text-primary {
         color: var(--color-text-primary);
@@ -43,8 +58,8 @@
     .emphasis {
         color: var(--color-emphasis);
     }
-    .border-gray {
-        border-color: var(--color-border-gray);
+    .border-primary {
+        border-color: var(--color-border-primary);
     }
     .level-1 {
         background-color: var(--color-level1);
@@ -61,3 +76,7 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+html,
+body {
+    background-color: var(--color-bg-background);
+}

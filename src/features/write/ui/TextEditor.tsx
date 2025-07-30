@@ -34,7 +34,7 @@ export default function TextEditor() {
             onChange={() => {
                 setBlocks(editor.document)
             }}
-            theme={'light'}
+            theme={'dark'}
         />
     )
 }

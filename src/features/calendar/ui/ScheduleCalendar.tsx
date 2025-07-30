@@ -29,15 +29,15 @@ export function ScheduleCalendar() {
                 <IoCalendarOutline />
                 일정
             </HeadText>
-            <div className="border-border-gray text-text-primary flex w-full flex-col items-center rounded-xl border p-4">
+            <div className="border-border-primary text-text-primary flex w-full flex-col items-center rounded-xl border p-4">
                 <div className="flex flex-row items-center gap-px">
-                    <div className="p-2">
+                    <div className="cursor-pointer p-2">
                         <MdKeyboardArrowLeft size={20} onClick={handlePrevMonth} />
                     </div>
                     <div className="px-4 text-xl font-semibold">
                         {year}년 {displayMonth.toString().padStart(2, '0')}월
                     </div>
-                    <div className="p-2">
+                    <div className="cursor-pointer p-2">
                         <MdKeyboardArrowRight size={20} onClick={handleNextMonth} />
                     </div>
                 </div>
@@ -54,7 +54,7 @@ export function ScheduleCalendar() {
                             const isCurrentMonth = date.getMonth() === month
                             const isToday = isSameDay(new Date(), date)
                             return (
-                                <div key={idx} className={`hover:bg-border-gray box-border flex h-24 w-full flex-col rounded-xl py-1`}>
+                                <div key={idx} className={`hover:bg-bg-primary box-border flex h-24 w-full flex-col rounded-xl py-1`}>
                                     <div
                                         className={`ml-2 flex h-8 w-8 items-center justify-center rounded-full ${isCurrentMonth ? `${isToday ? 'bg-emphasis text-white' : 'text-primary'}` : 'text-secondary'} `}
                                     >

@@ -12,7 +12,7 @@ export function SidebarPageButton({ href, text, icon }: SidebarPageButtonProps) 
     return (
         <Link
             href={href || '/'}
-            className={`text-text-secondary flex flex-row items-center justify-between rounded-lg p-4 text-sm font-semibold ${pathname === href ? 'bg-emphasis text-white' : 'hover:bg-zinc-200'}`}
+            className={`text-text-secondary flex flex-row items-center justify-between rounded-lg p-4 text-sm font-semibold ${pathname === href ? 'bg-emphasis text-white' : 'hover:bg-bg-secondary'}`}
         >
             <div className="flex flex-row items-center gap-2">
                 <div className={`flex items-center justify-center`}>{icon}</div>

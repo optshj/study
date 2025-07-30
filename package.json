@@ -12,6 +12,7 @@
         "@blocknote/core": "^0.34.0",
         "@blocknote/mantine": "^0.34.0",
         "@blocknote/react": "^0.34.0",
+        "@radix-ui/themes": "^3.2.1",
         "@svgr/webpack": "^8.1.0",
         "next": "15.4.2",
         "react": "19.1.0",

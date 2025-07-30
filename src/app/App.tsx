@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './styles/globals.css'
+import '@radix-ui/themes/styles.css'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -13,7 +14,7 @@ export default function App({
 }>) {
     return (
         <html lang="kr">
-            <body className={`font-inter antialiased`}>{children}</body>
+            <body className={`font-inter bg-background antialiased`}>{children}</body>
         </html>
     )
 }
