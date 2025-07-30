@@ -1,3 +1,3 @@
-import { KakaoCallback } from '@/features/kakaoLogin'
+import { AuthPage } from '@/pages/authKakao'
 
-export default KakaoCallback
+export default AuthPage
