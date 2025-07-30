@@ -1,4 +1,4 @@
-import { HeadText } from '@/shared/ui/Text/HeadText'
+import { HeadText } from '@/shared/ui/text/HeadText'
 
 export function TodaySchedule() {
     return (

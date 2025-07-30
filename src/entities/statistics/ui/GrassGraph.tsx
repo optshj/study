@@ -1,4 +1,4 @@
-import { HeadText } from '@/shared/ui/Text/HeadText'
+import { HeadText } from '@/shared/ui/text/HeadText'
 import { useMemo } from 'react'
 import { getColorForCount } from '../lib/getColorForCount'
 import { GoGraph } from 'react-icons/go'
