@@ -1,3 +1,5 @@
-import App from "@/app/App";
+import App from '@/app/App'
+import { metadata } from '@/app/App'
 
-export default App;
+export { metadata }
+export default App

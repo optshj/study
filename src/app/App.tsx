@@ -27,7 +27,7 @@ export default function App({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="kr">
+        <html lang="ko">
             <body className={`font-inter bg-background antialiased`}>
                 {children}
                 <Analytics />
