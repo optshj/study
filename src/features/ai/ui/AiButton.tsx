@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Modal, ToggleGroupButton } from '@/shared/ui'
 import { BsQuestionCircleFill } from 'react-icons/bs'
 import { Dialog } from 'radix-ui'
+
 export function AiButton() {
     const [difficulty, setDifficulty] = useState('')
     const [problemType, setProblemType] = useState('')
