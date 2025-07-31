@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { getColorForCount } from '../lib/getColorForCount'
 import { GoGraph } from 'react-icons/go'
 import { HeadText } from '@/shared/ui'
+import { Tooltip } from '@/shared/ui'
 
 export function GrassGraph() {
     const activityData: { [key: string]: number } = useMemo(() => {
@@ -88,7 +89,11 @@ export function GrassGraph() {
                             const count = activityData[dateString] || 0
                             const colorClass = getColorForCount(count)
 
-                            return <div key={dateString} className={`h-4 w-4 rounded-sm ${colorClass}`} title={`${dateString}: ${count}개의 활동`} />
+                            return (
+                                <Tooltip key={dateString} content={`${dateString}: ${count}개의 활동`}>
+                                    <div key={dateString} className={`h-4 w-4 rounded-sm ${colorClass}`} />
+                                </Tooltip>
+                            )
                         })}
                     </div>
                 </div>

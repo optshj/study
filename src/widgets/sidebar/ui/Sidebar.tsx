@@ -3,6 +3,7 @@ import { KakaoLoginButton } from '@/features/kakaoLogin'
 import { SidebarPageButton } from '@/features/sidebarbutton'
 import { sidebarMenuItems } from './Sidebar.data'
 import { Logo } from '@/entities/logo'
+import { WasteBasket } from '@/features/wasteBasket/ui/WasteBasket'
 
 export function Sidebar({ children }: { children: React.ReactNode }) {
     return (
@@ -25,8 +26,9 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <KakaoLoginButton />
+                    <WasteBasket />
                     <DarkModeButton />
+                    <KakaoLoginButton />
                 </div>
             </div>
             <div className="ml-64 flex-1 p-4">{children}</div>

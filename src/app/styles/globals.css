@@ -76,6 +76,7 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
 html,
 body {
     background-color: var(--color-bg-background);

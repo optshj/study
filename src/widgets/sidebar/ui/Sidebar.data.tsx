@@ -1,8 +1,8 @@
 import { GoHomeFill as Home } from 'react-icons/go'
-import { FaTrashCan as Trash } from 'react-icons/fa6'
 import { LuFileText as Index } from 'react-icons/lu'
 import { FaRegAddressCard as Resume } from 'react-icons/fa6'
 import { IoAddOutline as Add } from 'react-icons/io5'
+
 export interface SidebarMenuItem {
     href: string
     text: string
@@ -19,6 +19,5 @@ export const sidebarMenuItems: SidebarMenuItem[] = [
         text: '개인글',
         icon: <Index size={size} />,
         children: [{ href: '/writing', text: '개인글 추가', icon: <Add size={size} /> }]
-    },
-    { href: '/trash', text: '휴지통', icon: <Trash size={size} /> }
+    }
 ]
