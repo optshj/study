@@ -1,7 +1,7 @@
-import { HeadText } from '@/shared/ui/text/HeadText'
 import { useMemo } from 'react'
 import { getColorForCount } from '../lib/getColorForCount'
 import { GoGraph } from 'react-icons/go'
+import { HeadText } from '@/shared/ui'
 
 export function GrassGraph() {
     const activityData: { [key: string]: number } = useMemo(() => {

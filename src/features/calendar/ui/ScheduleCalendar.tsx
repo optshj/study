@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 import { isSameDay } from '../lib/isSameDay'
-import { HeadText } from '@/shared/ui/text/HeadText'
 import { IoCalendarOutline } from 'react-icons/io5'
+import { HeadText } from '@/shared/ui'
 
 export function ScheduleCalendar() {
     const [currentDate, setCurrentDate] = useState(new Date())
