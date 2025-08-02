@@ -6,7 +6,7 @@ export function Shortcut() {
         <div className="flex h-full flex-1 flex-col items-center gap-4">
             <HeadText>
                 <MdOutlineShortcut />
-                바로가기
+                뭐넣지?
             </HeadText>
             <div className="border-border-primary flex h-full w-full flex-col items-center gap-2 rounded-lg border p-4">내용</div>
         </div>

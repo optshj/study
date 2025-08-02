@@ -17,6 +17,14 @@ export const comingSchedules: Schedule[] = [
         color: '#FF6F61'
     },
     {
+        id: 6,
+        name: '밥먹기',
+        startTime: '12:00',
+        endTime: '13:00',
+        date: '2025-08-10',
+        color: '#7e3730'
+    },
+    {
         id: 2,
         name: '프로젝트 마감',
         startTime: '18:00',

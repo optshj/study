@@ -5,8 +5,10 @@ import { BlockNoteView } from '@blocknote/mantine'
 import '@blocknote/mantine/style.css'
 import '@blocknote/core/fonts/inter.css'
 import { Block } from '@blocknote/core'
+import { useDarkMode } from '@/features/darkmode'
 
 export default function TextEditor() {
+    const { darkMode } = useDarkMode()
     const [blocks, setBlocks] = useState<Block[]>([])
     const editor = useCreateBlockNote({
         initialContent: [
@@ -34,7 +36,7 @@ export default function TextEditor() {
             onChange={() => {
                 setBlocks(editor.document)
             }}
-            theme={'dark'}
+            theme={darkMode ? 'dark' : 'light'}
         />
     )
 }

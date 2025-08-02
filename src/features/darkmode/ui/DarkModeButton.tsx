@@ -1,15 +1,11 @@
 'use client'
-import { useState } from 'react'
 import DarkIcon from './assets/dark-mode.svg'
 import LightIcon from './assets/light-mode.svg'
 import { SwitchButton } from '@/shared/ui'
+import { useDarkMode } from '../model/DarkModeContext'
 
 export function DarkModeButton() {
-    const [darkMode, setDarkMode] = useState(false)
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode)
-        document.documentElement.classList.toggle('dark', !darkMode)
-    }
+    const { darkMode, toggleDarkMode } = useDarkMode()
     return (
         <div className="flex cursor-pointer flex-row items-center justify-between rounded-lg p-4 text-sm font-medium">
             <div className="flex flex-row items-center gap-2">

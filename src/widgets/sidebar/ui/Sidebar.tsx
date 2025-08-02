@@ -10,7 +10,9 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
         <div className="flex h-screen">
             <div className="bg-primary fixed flex h-full w-64 flex-col justify-between p-4">
                 <div className="flex flex-col gap-1">
-                    <Logo />
+                    <div className="px-3">
+                        <Logo />
+                    </div>
                     {sidebarMenuItems.map((item) => (
                         <div key={item.href}>
                             <SidebarPageButton href={item.href} text={item.text} icon={item.icon} />

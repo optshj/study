@@ -11,7 +11,7 @@ export function HomePage() {
                     <IntroductionCarousel />
                     <Shortcut />
                 </div>
-                <div className="flex h-[458px] w-full items-center gap-4">
+                <div className="flex h-full w-full items-stretch gap-4">
                     <ScheduleCalendar />
                     <ComingSchedule />
                 </div>

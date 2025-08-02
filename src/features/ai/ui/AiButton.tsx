@@ -13,8 +13,8 @@ export function AiButton() {
     return (
         <Modal
             trigger={
-                <div className="border-border-primary mt-10 flex cursor-pointer justify-center border-t py-10">
-                    <button className="bg-bg-primary border-border-primary text-text-primary cursoir flex w-full items-center justify-center rounded-lg border py-6">
+                <div className="border-border-primary mt-10 flex justify-center border-t py-10">
+                    <button className="bg-bg-primary border-border-primary text-text-primary flex w-full cursor-pointer items-center justify-center rounded-lg border py-6">
                         <BsQuestionCircleFill className="mr-2 inline-block" />
                         AI로 연습문제 생성하기
                     </button>
@@ -34,7 +34,7 @@ export function AiButton() {
                     </button>
                 </Dialog.Close>
                 <Dialog.Close asChild>
-                    <button className="flex-1 rounded-xl bg-[#FF6E6E] py-3 text-white">뒤로가기</button>
+                    <button className="flex-1 cursor-pointer rounded-xl bg-[#FF6E6E] py-3 text-white">뒤로가기</button>
                 </Dialog.Close>
             </div>
         </Modal>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import './styles/globals.css'
 import '@radix-ui/themes/styles.css'
-import { ReactQueryProvider } from './provider/ReactQueryProvider'
+import { Provider } from './provider'
 
 export const metadata: Metadata = {
     title: 'LearnRun | AI 문제 생성 및 학습 관리 플랫폼',
@@ -30,7 +30,7 @@ export default function App({
     return (
         <html lang="ko">
             <body className={`font-inter bg-background antialiased`}>
-                <ReactQueryProvider>{children}</ReactQueryProvider>
+                <Provider>{children}</Provider>
                 <Analytics />
             </body>
         </html>
