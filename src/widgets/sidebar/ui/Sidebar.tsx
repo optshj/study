@@ -15,9 +15,9 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
                         <div key={item.href}>
                             <SidebarPageButton href={item.href} text={item.text} icon={item.icon} />
                             {item.children && (
-                                <div className="mt-1 ml-8 flex flex-col">
+                                <div className="mt-1 flex flex-col">
                                     {item.children.map((child) => (
-                                        <SidebarPageButton key={child.href} href={child.href} text={child.text} icon={child.icon} />
+                                        <SidebarPageButton key={child.href} href={child.href} text={child.text} icon={child.icon} className="pl-8" />
                                     ))}
                                 </div>
                             )}

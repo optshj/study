@@ -2,6 +2,7 @@
 @import 'tailwindcss';
 
 @theme {
+    --color-bg-background: #ffffff;
     --color-emphasis: #2383e2;
     --color-bg-secondary: #f1f3f5;
     --color-text-secondary: #6b6b6b;
@@ -80,4 +81,10 @@
 html,
 body {
     background-color: var(--color-bg-background);
+}
+div {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
 }

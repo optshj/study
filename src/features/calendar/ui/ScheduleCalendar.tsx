@@ -24,12 +24,12 @@ export function ScheduleCalendar() {
     const handleNextMonth = () => setCurrentDate(new Date(year, month + 1, 1))
 
     return (
-        <>
+        <div className="flex h-full flex-1 flex-col items-center gap-4">
             <HeadText>
                 <IoCalendarOutline />
                 일정
             </HeadText>
-            <div className="border-border-primary text-text-primary flex w-full flex-col items-center rounded-xl border p-4">
+            <div className="border-border-primary text-text-primary flex h-full w-full flex-col items-center rounded-xl border p-4">
                 <div className="flex flex-row items-center gap-px">
                     <div className="cursor-pointer p-2">
                         <MdKeyboardArrowLeft size={20} onClick={handlePrevMonth} />
@@ -54,9 +54,9 @@ export function ScheduleCalendar() {
                             const isCurrentMonth = date.getMonth() === month
                             const isToday = isSameDay(new Date(), date)
                             return (
-                                <div key={idx} className={`hover:bg-bg-primary box-border flex h-24 w-full flex-col rounded-xl py-1`}>
+                                <div key={idx} className={`hover:bg-bg-primary flex cursor-pointer flex-col items-center justify-center rounded-xl py-2`}>
                                     <div
-                                        className={`ml-2 flex h-8 w-8 items-center justify-center rounded-full ${isCurrentMonth ? `${isToday ? 'bg-emphasis text-white' : 'text-primary'}` : 'text-secondary'} `}
+                                        className={`flex h-8 w-8 items-center justify-center rounded-full ${isCurrentMonth ? `${isToday ? 'bg-emphasis text-white' : 'text-text-primary'}` : 'text-secondary'} `}
                                     >
                                         {date.getDate()}
                                     </div>
@@ -66,6 +66,6 @@ export function ScheduleCalendar() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

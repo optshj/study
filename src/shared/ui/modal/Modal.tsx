@@ -11,7 +11,7 @@ export function Modal({ trigger, children, title }: ModalProps) {
             <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
             <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-                <Dialog.Content className="fixed top-1/2 left-1/2 z-50 flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-lg bg-white p-6 shadow-lg">
+                <Dialog.Content className="bg-bg-background fixed top-1/2 left-1/2 z-50 flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-lg p-6 shadow-lg">
                     <Dialog.Title className="text-lg font-semibold">{title}</Dialog.Title>
                     {children}
                 </Dialog.Content>

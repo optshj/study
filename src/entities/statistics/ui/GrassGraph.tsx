@@ -55,7 +55,7 @@ export function GrassGraph() {
     }, [])
 
     return (
-        <div className="flex w-full flex-col items-center justify-center gap-4 py-10">
+        <div className="flex w-full flex-col items-center justify-center gap-4">
             <HeadText>
                 <GoGraph />
                 활동 통계
