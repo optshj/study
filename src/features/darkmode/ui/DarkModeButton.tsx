@@ -1,7 +1,7 @@
 'use client'
 import DarkIcon from './assets/dark-mode.svg'
 import LightIcon from './assets/light-mode.svg'
-import { SwitchButton } from '@/shared/ui'
+import { SwitchButton } from '@/shared/ui/button/SwitchButton'
 import { useDarkMode } from '../model/DarkModeContext'
 
 export function DarkModeButton() {

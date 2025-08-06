@@ -1,6 +1,6 @@
 export { SwitchButton } from './button/SwitchButton'
 export { HeadText } from './text/HeadText'
-export { Modal } from './modal/Modal'
+export { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from './modal/dialog'
 export { ToggleGroupButton } from './button/ToggleGroupButton'
 export { Tooltip } from './tooltip/Tooltip'
 export { Popover } from './popover/Popover'
