@@ -9,6 +9,5 @@ export async function DELETE() {
         httpOnly: true
     })
     response.cookies.set('access_token', '', { maxAge: 0, path: '/', httpOnly: true })
-
     return response
 }

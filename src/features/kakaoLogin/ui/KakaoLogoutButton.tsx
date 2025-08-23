@@ -9,6 +9,7 @@ export function KakaoLogoutButton() {
             method: 'DELETE'
         })
         clearUser()
+        window.location.reload()
     }
     return (
         <div
