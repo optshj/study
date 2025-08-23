@@ -1,2 +1,1 @@
-import { GET } from '@/features/kakaoLogin'
-export { GET }
+export { GET } from '@/features/kakaoLogin'

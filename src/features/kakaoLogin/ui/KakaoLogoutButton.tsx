@@ -1,13 +1,15 @@
 'use client'
 import { IoIosLogOut } from 'react-icons/io'
-export function KakaoLogoutButton() {
-    const handleLogout = async () => {
-        const res = await fetch('/api/auth/logout', { method: 'DELETE' })
-        if (res.ok) {
-            window.location.href = '/'
-        }
-    }
+import { useUser } from '../model/userContext'
 
+export function KakaoLogoutButton() {
+    const { user, clearUser } = useUser()
+    const handleLogout = async () => {
+        await fetch('/api/auth/logout', {
+            method: 'DELETE'
+        })
+        clearUser()
+    }
     return (
         <div
             className={`text-text-primary flex cursor-pointer flex-row items-center justify-between rounded-lg p-4 text-sm font-medium transition-colors duration-300 hover:bg-red-400 hover:text-white`}

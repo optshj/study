@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import KakaoLogo from './assets/kakao-logo.svg'
-import { cookies } from 'next/headers'
 import { KakaoLogoutButton } from './KakaoLogoutButton'
+import { cookies } from 'next/headers'
 
 export async function KakaoLoginButton({ className }: { className?: string }) {
     const cookieStore = await cookies()
-    const accessToken = cookieStore.get('access_token')?.value
-
+    const accessToken = cookieStore.get('access_token')
     if (accessToken) {
         return <KakaoLogoutButton />
     }
+
     return (
         <Link
             href={`https://kauth.kakao.com/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY}&redirect_uri=${process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI}&response_type=code`}

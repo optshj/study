@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function GET(req: NextRequest) {
     const url = new URL(req.url)
     const code = url.searchParams.get('code')
+    if (!code) {
+        return NextResponse.redirect(new URL('/', req.url))
+    }
     const tokenRes = await fetch('https://kauth.kakao.com/oauth/token', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -15,7 +18,10 @@ export async function GET(req: NextRequest) {
     })
 
     const tokenData = await tokenRes.json()
+    const refreshExpire = new Date(Date.now() + tokenData.refresh_token_expires_in * 1000)
+    const accessExpire = new Date(Date.now() + tokenData.expires_in * 1000)
     const response = NextResponse.redirect(new URL('/', req.url))
-    response.cookies.set('access_token', tokenData.access_token, { httpOnly: true, path: '/' })
+    response.cookies.set('refresh_token', tokenData.refresh_token, { httpOnly: true, path: '/', expires: refreshExpire })
+    response.cookies.set('access_token', tokenData.access_token, { httpOnly: true, path: '/', expires: accessExpire })
     return response
 }
