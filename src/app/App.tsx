@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './styles/globals.css'
 import '@radix-ui/themes/styles.css'
 import { Provider } from './provider'
+import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
     title: 'LearnRun | AI 문제 생성 및 학습 관리 플랫폼',
@@ -32,6 +33,7 @@ export default function App({
             <body className={`font-inter bg-background antialiased`}>
                 <Provider>{children}</Provider>
                 <Analytics />
+                <Toaster position="top-center" richColors closeButton />
             </body>
         </html>
     )

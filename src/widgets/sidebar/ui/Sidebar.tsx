@@ -8,7 +8,7 @@ import { WasteBasket } from '@/features/wasteBasket/ui/WasteBasket'
 export function Sidebar({ children }: { children: React.ReactNode }) {
     return (
         <div className="flex h-screen">
-            <div className="bg-primary fixed flex h-full w-64 flex-col justify-between p-4">
+            <div className="bg-bg-primary fixed flex h-full w-64 flex-col justify-between p-4">
                 <div className="flex flex-col gap-1">
                     <div className="px-3">
                         <Logo />
@@ -33,7 +33,9 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
                     <KakaoLoginButton />
                 </div>
             </div>
-            <div className="ml-64 flex-1 p-4">{children}</div>
+            <div className="ml-64 flex-1 p-4">
+                <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-4 py-10">{children}</div>
+            </div>
         </div>
     )
 }

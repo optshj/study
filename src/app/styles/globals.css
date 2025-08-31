@@ -15,6 +15,7 @@
     --color-level3: #438ef2;
     --color-level4: #74b0ff;
     --font-inter: 'inter', sans-serif;
+    --color-border-gray: #b7b7b7;
 }
 
 @layer base {
@@ -30,6 +31,7 @@
         --color-level2: #1e69cb;
         --color-level3: #438ef2;
         --color-level4: #74b0ff;
+        --color-border-gray: #b7b7b7;
     }
 
     html.dark {
@@ -45,7 +47,7 @@
     .bg-background {
         background-color: var(--color-bg-background);
     }
-    .bg-primary {
+    .bg-bg-primary {
         background-color: var(--color-bg-primary);
     }
     .bg-secondary {
@@ -74,6 +76,9 @@
     }
     .level-4 {
         background-color: var(--color-level4);
+    }
+    .border-gray {
+        border-color: var(--color-border-gray);
     }
 }
 

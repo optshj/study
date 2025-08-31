@@ -1,0 +1,6 @@
+.bn-editor {
+    padding-inline: 0px;
+    white-space: pre-wrap !important; /* 긴 문자열도 자동 줄바꿈 */
+    overflow-wrap: break-word !important; /* 긴 단어도 끊어서 줄바꿈 */
+    word-break: break-word !important;
+}

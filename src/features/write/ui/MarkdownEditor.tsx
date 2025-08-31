@@ -1,12 +1,19 @@
 'use client'
-import React, { useEffect, useState } from 'react'
 import { useCreateBlockNote } from '@blocknote/react'
 import { BlockNoteView } from '@blocknote/mantine'
 import '@blocknote/mantine/style.css'
 import '@blocknote/core/fonts/inter.css'
 import { Block } from '@blocknote/core'
+import { useEffect, useState } from 'react'
+import './MarkdownEditor.css'
 
-export default function TextEditor() {
+interface MarkdownEditorProps {
+    value?: string
+    onChange: (value: string) => void
+    editable?: boolean
+    sideMenu?: boolean
+}
+export default function MarkdownEditor({ value, onChange, editable = true, sideMenu = true }: MarkdownEditorProps) {
     const [darkMode, setDarkMode] = useState(false)
     useEffect(() => {
         const updateTheme = () => {
@@ -20,34 +27,23 @@ export default function TextEditor() {
 
         return () => observer.disconnect()
     }, [])
-    const [blocks, setBlocks] = useState<Block[]>([])
+
+    const initialBlocks: Block[] = value ? JSON.parse(value) : [{ type: 'paragraph' }]
+
     const editor = useCreateBlockNote({
-        initialContent: [
-            {
-                type: 'paragraph',
-                content: 'Welcome to this demo!'
-            },
-            {
-                type: 'heading',
-                content: 'This is a heading block'
-            },
-            {
-                type: 'paragraph',
-                content: 'This is a paragraph block'
-            },
-            {
-                type: 'paragraph'
-            }
-        ]
+        initialContent: initialBlocks
     })
 
     return (
         <BlockNoteView
             editor={editor}
             onChange={() => {
-                setBlocks(editor.document)
+                const json = JSON.stringify(editor.document)
+                onChange(json)
             }}
             theme={darkMode ? 'dark' : 'light'}
+            editable={editable !== false}
+            sideMenu={sideMenu !== false}
         />
     )
 }
