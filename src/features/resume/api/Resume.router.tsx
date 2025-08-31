@@ -78,7 +78,9 @@ export async function PUT(req: NextRequest, context: { params: Promise<{ type: s
         },
         body: JSON.stringify(rest)
     })
-
+    if (response.ok) {
+        return Response.json({ message: `${type} updated successfully` })
+    }
     return Response.json(await response.json())
 }
 

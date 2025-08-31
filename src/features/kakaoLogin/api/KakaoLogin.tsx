@@ -16,12 +16,12 @@ export async function GET(req: NextRequest) {
             code: code || ''
         })
     })
-    const apiRes = await fetch(`${process.env.API_URL}/user/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ kakaoId: '123456789' })
-    })
-    const apiData = await apiRes.json()
+    // const apiRes = await fetch(`${process.env.API_URL}/user/login`, {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ kakaoId: '123456789' })
+    // })
+    // const apiData = await apiRes.json()
     const tokenData = await tokenRes.json()
 
     const refreshExpire = new Date(Date.now() + tokenData.refresh_token_expires_in * 1000)
@@ -30,6 +30,6 @@ export async function GET(req: NextRequest) {
     response.cookies.set('refresh_token', tokenData.refresh_token, { httpOnly: true, path: '/', expires: refreshExpire })
     response.cookies.set('access_token', tokenData.access_token, { httpOnly: true, path: '/', expires: accessExpire })
 
-    response.cookies.set('id', apiData.accessToken, { httpOnly: true, path: '/', expires: accessExpire })
+    // response.cookies.set('id', apiData.accessToken, { httpOnly: true, path: '/', expires: accessExpire })
     return response
 }

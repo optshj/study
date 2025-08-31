@@ -77,32 +77,38 @@ export function useResumeItem<T extends keyof ResumePayloads>(type: T) {
         mutationKey: [`edit${type}`],
         mutationFn: async (body: ResumePayloads[T]) => {
             const response = await fetch(`/api/resume/${type}`, {
-                method: 'PUT', // 또는 PATCH
+                method: 'PUT',
                 body: JSON.stringify(body)
             })
-            toast.success(`${typeName}이(가) 수정되었습니다.`)
             if (!response.ok) throw new Error('Network response was not ok')
             return response.json()
         },
         onMutate: async (updatedItem: ResumePayloads[T]) => {
             await queryClient.cancelQueries({ queryKey: [`resume${type}`] })
+
             const previousData = queryClient.getQueryData<ResumePayloads[T][]>([`resume${type}`])
-            if (previousData) {
+
+            if (previousData && updatedItem.id) {
                 queryClient.setQueryData(
                     [`resume${type}`],
-                    previousData.map((item) => (item.id === updatedItem.id ? updatedItem : item))
+                    previousData.map((item) => (item.id === updatedItem.id ? { ...item, ...updatedItem } : item))
                 )
             }
+
             return { previousData }
         },
         onError: (_err, _variable, context?: { previousData?: ResumePayloads[T][] }) => {
-            queryClient.setQueryData([`resume${type}`], context?.previousData)
+            if (context?.previousData) {
+                queryClient.setQueryData([`resume${type}`], context.previousData)
+            }
+        },
+        onSuccess: () => {
+            toast.success(`${typeName}이(가) 수정되었습니다.`)
         },
         onSettled: () => {
             queryClient.invalidateQueries({ queryKey: [`resume${type}`] })
         }
     })
-
     return {
         items: items ?? [],
         addItem: addMutation.mutate,
