@@ -1,10 +1,10 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { useCreateBlockNote } from '@blocknote/react'
 import { BlockNoteView } from '@blocknote/mantine'
 import '@blocknote/mantine/style.css'
 import '@blocknote/core/fonts/inter.css'
 import { Block } from '@blocknote/core'
-import { useEffect, useState } from 'react'
 import './MarkdownEditor.css'
 
 interface MarkdownEditorProps {
@@ -21,14 +21,12 @@ export default function MarkdownEditor({ value, onChange, editable = true, sideM
         }
         updateTheme()
 
-        // 다크모드 toggle 시 classList 변화를 감지
         const observer = new MutationObserver(updateTheme)
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 
         return () => observer.disconnect()
     }, [])
-
-    const initialBlocks: Block[] = value ? JSON.parse(value) : [{ type: 'paragraph' }]
+    const initialBlocks: Block[] = value ? JSON.parse(value) : null
 
     const editor = useCreateBlockNote({
         initialContent: initialBlocks

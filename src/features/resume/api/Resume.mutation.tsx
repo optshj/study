@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { ResumePayloads } from './Resume.type'
+
 const typeMap = {
     award: '수상',
     skill: '기술',

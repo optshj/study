@@ -48,7 +48,6 @@ export async function POST(req: NextRequest, context: { params: Promise<{ type: 
     const accessToken = await getAccessToken()
 
     const body = await req.json()
-    console.log(body)
     const response = await fetch(getEndpoint(type), {
         method: 'POST',
         headers: {
@@ -57,7 +56,6 @@ export async function POST(req: NextRequest, context: { params: Promise<{ type: 
         },
         body: JSON.stringify(body)
     })
-    console.log(response)
     return Response.json(await response.json())
 }
 
